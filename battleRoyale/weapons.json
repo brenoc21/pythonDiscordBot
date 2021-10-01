@@ -1,0 +1,40 @@
+{
+    "weapons" :  [
+        {
+            "name": "Faca",
+            "minDmg": "1",
+            "maxDmg": "4"
+
+        },
+        {
+            "name": "PEXERA",
+            "minDmg": "1",
+            "maxDmg": "6"
+
+        },
+        {
+            "name": "Espada",
+            "minDmg": "1",
+            "maxDmg": "8"
+
+        },
+        {
+            "name": "Machado",
+            "minDmg": "1",
+            "maxDmg": "12"
+
+        },
+        {
+            "name": "Arma de Fogo",
+            "minDmg": "1",
+            "maxDmg": "16"
+
+        },
+        {
+            "name": "Retroescavadeira",
+            "minDmg": "10",
+            "maxDmg": "20"
+
+        }
+    ]  
+}

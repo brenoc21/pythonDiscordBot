@@ -1,8 +1,10 @@
 
 from enum import Enum
+from os import name
 from random import seed
 from random import random
 from random import randint
+import json
 
 
 deaths = open('./battleRoyale/DEATH.txt', 'r').readlines()
@@ -43,18 +45,35 @@ class player():
         self.name = name
         self.status = States.ALIVE
         self.life = 50
+        self.weapon = weapon("Mão", 1, 3)
+    
+class weapon():
+    def __init__(self, name, minDmg, maxDmg) -> None:
+        self.name = name
+        self.minDmg = minDmg
+        self.maxDmg = maxDmg
+    
+    def __str__(self) -> str:
+        return f"name:{self.name}, Dano:{self.minDmg} a {self.maxDmg}"
 
 
 class BattleRoyale():
     def __init__(self) -> None:
+        self.weapons = []
         self.players = []
         self.alive = []
         self.dead = []
         self.output = ""
+        self.loadWeapons()
 
         self.SINGLEKILLCHANCE = 0.6
         self.DEATHCHANCE = 0.8
 
+    def loadWeapons(self):
+        with open("./battleRoyale/weapons.json") as json_file:
+            data = json.load(json_file)
+            for weaponJ in data["weapons"]:
+                print(weaponJ)
 
     def addPlayer(self, name):
         self.players.append(player(name))
